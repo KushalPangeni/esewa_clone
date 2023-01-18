@@ -10,6 +10,8 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 83,
+      height: 78,
       color: Colors.transparent,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(4, 0, 4, 2.0),

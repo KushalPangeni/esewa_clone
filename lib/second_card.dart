@@ -13,7 +13,7 @@ class IconCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        height: 230,
+        height: 550,
         width: screenwidth,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -58,13 +58,92 @@ class IconCard extends StatelessWidget {
                     icon: Icon(Icons.airplanemode_on),
                   ),
                   CustomIconButton(
-                    text: '''International
-      Airlines''',
+                    text: '''International Airlines''',
                     icon: Icon(Icons.water_damage_outlined),
                   ),
                   CustomIconButton(
                     text: 'Hotels',
                     icon: Icon(Icons.location_city),
+                  ),
+                ],
+              ),
+              //3rd Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomIconButton(
+                    text: 'Govt. Payment',
+                    icon: Icon(Icons.payments),
+                  ),
+                  CustomIconButton(
+                    text: 'Cable Car',
+                    icon: Icon(Icons.electric_car),
+                  ),
+                  CustomIconButton(
+                    text: '''Sahakari Deposit''',
+                    icon: Icon(Icons.house),
+                  ),
+                  CustomIconButton(
+                    text: 'TV',
+                    icon: Icon(Icons.tv),
+                  ),
+                ],
+              ),
+              //4th Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomIconButton(
+                    text: 'Education Fee',
+                    icon: Icon(Icons.cast_for_education),
+                  ),
+                  CustomIconButton(
+                    text: 'Insurance',
+                    icon: Icon(Icons.umbrella_outlined),
+                  ),
+                  CustomIconButton(
+                    text: '''Financial Services''',
+                    icon: Icon(Icons.monetization_on),
+                  ),
+                  CustomIconButton(
+                    text: 'Health',
+                    icon: Icon(Icons.local_hospital),
+                  ),
+                ],
+              ),
+              //5th Row
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CustomIconButton(
+                    text: 'Bus Ticket',
+                    icon: Icon(Icons.bus_alert),
+                  ),
+                  CustomIconButton(
+                    text: 'Movies',
+                    icon: Icon(Icons.movie),
+                  ),
+                  CustomIconButton(
+                    text: '''Voting & Events''',
+                    icon: Icon(Icons.how_to_vote),
+                  ),
+                  CustomIconButton(
+                    text: 'Online Payment',
+                    icon: Icon(Icons.payment),
+                  ),
+                ],
+              ),
+              //6th Row
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.,
+                children: [
+                  CustomIconButton(
+                    text: 'Antivirus',
+                    icon: Icon(Icons.dangerous),
+                  ),
+                  CustomIconButton(
+                    text: 'Community Electricity',
+                    icon: Icon(Icons.electric_bolt),
                   ),
                 ],
               ),

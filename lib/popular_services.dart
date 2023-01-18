@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ListViewIcons extends StatelessWidget {
@@ -39,11 +41,14 @@ class ListViewIcons extends StatelessWidget {
                 ],
               ),
             ),
+            //View More Button
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 30, 0, 8.0),
               child: Center(
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    log('tapped');
+                  },
                   child: Container(
                     height: 50,
                     width: screenwidth - 220,
@@ -91,7 +96,7 @@ class ListViewIcons extends StatelessWidget {
                 maxLines: 2,
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
-            )
+            ),
           ],
         ),
       ),

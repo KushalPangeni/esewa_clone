@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-
+//ListView for images
 import 'package:flutter/material.dart';
 
 class ListViewHorizontal extends StatelessWidget {
@@ -23,7 +23,7 @@ class ListViewHorizontal extends StatelessWidget {
 
   Widget listViewScroll(double sw) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 0, 8, 0),
+      padding: const EdgeInsets.fromLTRB(12, 12, 8, 0),
       child: Container(
         // height: 100,
         width: sw - subwidth,

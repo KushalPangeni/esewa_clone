@@ -2,9 +2,10 @@
 
 import 'package:esewa_clone/appbar_profile_icons.dart';
 import 'package:esewa_clone/listview_horz.dart';
-import 'package:esewa_clone/listview_icons_hori.dart';
+import 'package:esewa_clone/popular_services.dart';
 import 'package:esewa_clone/money_card.dart';
 import 'package:esewa_clone/second_card.dart';
+import 'package:esewa_clone/travel_package.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -33,17 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(
-                height: 12,
-              ),
-              // IconCard(),
-              SizedBox(
                 height: 150,
                 // width: 250,
                 child: ListViewHorizontal(
                   subwidth: 70,
                 ),
               ),
-              SizedBox(height: 270, child: ListViewIcons())
+              SizedBox(
+                height: 270,
+                child: ListViewIcons(),
+              ),
+              SizedBox(
+                height: 270,
+                child: TravelPackage(),
+              )
             ],
           ),
         ),

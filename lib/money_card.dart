@@ -13,7 +13,7 @@ class MoneyCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 12, 12.0, 0),
       child: Container(
-        height: 120,
+        height: 128,
         width: screenwidth,
         decoration: BoxDecoration(
           color: Colors.white,
