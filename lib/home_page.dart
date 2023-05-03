@@ -27,17 +27,23 @@ class _MyHomePageState extends State<MyHomePage> {
               AppBarProfile(),
               MoneyCard(),
               IconCard(),
-              SizedBox(
-                height: 150,
-                child: ListViewHorizontal(
-                  subwidth: 24,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                child: SizedBox(
+                  height: 150,
+                  child: ListViewHorizontal(
+                    subwidth: 2.9,
+                  ),
                 ),
               ),
-              SizedBox(
-                height: 150,
-                // width: 250,
-                child: ListViewHorizontal(
-                  subwidth: 70,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                child: SizedBox(
+                  height: 150,
+                  // width: 250,
+                  child: ListViewHorizontal(
+                    subwidth: 2.2,
+                  ),
                 ),
               ),
               SizedBox(

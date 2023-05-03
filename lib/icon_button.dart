@@ -16,6 +16,8 @@ class CustomIconButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.fromLTRB(4, 0, 4, 2.0),
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               onPressed: (() {}),

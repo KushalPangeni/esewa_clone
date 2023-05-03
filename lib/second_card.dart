@@ -1,11 +1,19 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:esewa_clone/icon_button.dart';
+import 'dart:developer';
+
+import 'package:esewa_clone/const.dart';
 import 'package:flutter/material.dart';
 
-class IconCard extends StatelessWidget {
+class IconCard extends StatefulWidget {
   const IconCard({super.key});
 
+  @override
+  State<IconCard> createState() => _IconCardState();
+}
+
+class _IconCardState extends State<IconCard> {
+  bool viewMore = true;
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
@@ -13,7 +21,7 @@ class IconCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        height: 550,
+        height: viewMore == false ? 600 : 350,
         width: screenwidth,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -23,129 +31,17 @@ class IconCard extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 8, 0, 8.0),
           child: Column(
             children: [
-              //1st row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomIconButton(
-                    text: 'TopUp',
-                    icon: Icon(Icons.mobile_friendly),
-                  ),
-                  CustomIconButton(
-                    text: 'Electricity',
-                    icon: Icon(Icons.light),
-                  ),
-                  CustomIconButton(
-                    text: 'Khanepani',
-                    icon: Icon(Icons.water_damage_outlined),
-                  ),
-                  CustomIconButton(
-                    text: 'eSewa Care',
-                    icon: Icon(Icons.heart_broken_outlined),
-                  ),
-                ],
-              ),
-              //2nd row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomIconButton(
-                    text: 'Internet',
-                    icon: Icon(Icons.wifi),
-                  ),
-                  CustomIconButton(
-                    text: 'Airlines',
-                    icon: Icon(Icons.airplanemode_on),
-                  ),
-                  CustomIconButton(
-                    text: '''International Airlines''',
-                    icon: Icon(Icons.water_damage_outlined),
-                  ),
-                  CustomIconButton(
-                    text: 'Hotels',
-                    icon: Icon(Icons.location_city),
-                  ),
-                ],
-              ),
-              //3rd Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomIconButton(
-                    text: 'Govt. Payment',
-                    icon: Icon(Icons.payments),
-                  ),
-                  CustomIconButton(
-                    text: 'Cable Car',
-                    icon: Icon(Icons.electric_car),
-                  ),
-                  CustomIconButton(
-                    text: '''Sahakari Deposit''',
-                    icon: Icon(Icons.house),
-                  ),
-                  CustomIconButton(
-                    text: 'TV',
-                    icon: Icon(Icons.tv),
-                  ),
-                ],
-              ),
-              //4th Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomIconButton(
-                    text: 'Education Fee',
-                    icon: Icon(Icons.cast_for_education),
-                  ),
-                  CustomIconButton(
-                    text: 'Insurance',
-                    icon: Icon(Icons.umbrella_outlined),
-                  ),
-                  CustomIconButton(
-                    text: '''Financial Services''',
-                    icon: Icon(Icons.monetization_on),
-                  ),
-                  CustomIconButton(
-                    text: 'Health',
-                    icon: Icon(Icons.local_hospital),
-                  ),
-                ],
-              ),
-              //5th Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomIconButton(
-                    text: 'Bus Ticket',
-                    icon: Icon(Icons.bus_alert),
-                  ),
-                  CustomIconButton(
-                    text: 'Movies',
-                    icon: Icon(Icons.movie),
-                  ),
-                  CustomIconButton(
-                    text: '''Voting & Events''',
-                    icon: Icon(Icons.how_to_vote),
-                  ),
-                  CustomIconButton(
-                    text: 'Online Payment',
-                    icon: Icon(Icons.payment),
-                  ),
-                ],
-              ),
-              //6th Row
-              Row(
-                // mainAxisAlignment: MainAxisAlignment.,
-                children: [
-                  CustomIconButton(
-                    text: 'Antivirus',
-                    icon: Icon(Icons.dangerous),
-                  ),
-                  CustomIconButton(
-                    text: 'Community Electricity',
-                    icon: Icon(Icons.electric_bolt),
-                  ),
-                ],
+              Expanded(
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: viewMore == false ? icons.length : 12,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 4,
+                      crossAxisSpacing: 5,
+                      childAspectRatio: 1),
+                  itemBuilder: ((context, index) => icons[index]),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -153,7 +49,15 @@ class IconCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        if (viewMore) {
+                          viewMore = false;
+                        } else {
+                          viewMore = true;
+                        }
+                        log(viewMore.toString());
+                        setState(() {});
+                      },
                       child: Container(
                         height: 50,
                         width: screenwidth - 150,
@@ -164,8 +68,14 @@ class IconCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('View More'),
-                            Icon(Icons.arrow_drop_down)
+                            if (viewMore == false)
+                              (Text('View Less'))
+                            else
+                              (Text('View More')),
+                            if (viewMore == false)
+                              (Icon(Icons.arrow_drop_up))
+                            else
+                              (Icon(Icons.arrow_drop_down)),
                           ],
                         ),
                       ),
@@ -186,8 +96,14 @@ class IconCard extends StatelessWidget {
               )
             ],
           ),
+          // ],
         ),
       ),
+      // ),
     );
+  }
+
+  void change() {
+    setState(() {});
   }
 }

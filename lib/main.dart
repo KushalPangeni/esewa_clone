@@ -15,11 +15,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.green,
-          appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(color: Colors.black),
+        primarySwatch: Colors.green,
+        appBarTheme: AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+        iconTheme: IconThemeData(color: Colors.orange[800]),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            textStyle:
+                MaterialStateProperty.all(TextStyle(color: Colors.black)),
+            backgroundColor: MaterialStateProperty.all(Colors.orange[200]),
           ),
-          iconTheme: IconThemeData(color: Colors.orange[800])),
+        ),
+      ),
       home: const MyHomePage(),
     );
   }

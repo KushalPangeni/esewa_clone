@@ -17,8 +17,11 @@ class AppBarProfile extends StatelessWidget {
           Container(
             height: 50,
             width: 50,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white,
+                image: DecorationImage(
+                    image: AssetImage("images/image1.jpg"), fit: BoxFit.cover)),
           ),
           //Row of icons
           Row(

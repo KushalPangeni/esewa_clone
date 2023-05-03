@@ -85,8 +85,11 @@ class ListViewIcons extends StatelessWidget {
               height: 70,
               width: 70,
               decoration: BoxDecoration(
-                  color: Colors.teal[50],
-                  borderRadius: BorderRadius.circular(12)),
+                color: Colors.teal[50],
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                    image: AssetImage("images/image1.jpg"), fit: BoxFit.cover),
+              ),
             ),
             SizedBox(
               // height: 60,

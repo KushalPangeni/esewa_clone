@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 //ListView for images
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class ListViewHorizontal extends StatelessWidget {
@@ -9,16 +10,15 @@ class ListViewHorizontal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      addAutomaticKeepAlives: true,
-      children: [
-        listViewScroll(screenwidth),
-        listViewScroll(screenwidth),
-        listViewScroll(screenwidth),
-        listViewScroll(screenwidth)
-      ],
-    );
+    return CarouselSlider(
+        items: [
+          listViewScroll(screenwidth),
+          listViewScroll(screenwidth),
+          listViewScroll(screenwidth),
+          listViewScroll(screenwidth)
+        ],
+        options: CarouselOptions(
+            autoPlay: true, aspectRatio: subwidth, disableCenter: false));
   }
 
   Widget listViewScroll(double sw) {
@@ -26,9 +26,13 @@ class ListViewHorizontal extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(12, 12, 8, 0),
       child: Container(
         // height: 100,
-        width: sw - subwidth,
+        width: sw,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(14)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
+          image: DecorationImage(
+              image: AssetImage("images/image1.jpg"), fit: BoxFit.cover),
+        ),
       ),
     );
   }
