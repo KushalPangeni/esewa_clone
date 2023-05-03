@@ -22,40 +22,50 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.orange[100],
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              AppBarProfile(),
-              MoneyCard(),
-              IconCard(),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
-                child: SizedBox(
-                  height: 150,
-                  child: ListViewHorizontal(
-                    subwidth: 2.9,
+          child: Stack(children: [
+            Container(
+              height: 180,
+              decoration: BoxDecoration(
+                  color: Colors.orange[400],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50))),
+            ),
+            Column(
+              children: [
+                AppBarProfile(),
+                MoneyCard(),
+                IconCard(),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                  child: SizedBox(
+                    height: 150,
+                    child: ListViewHorizontal(
+                      subwidth: 2.9,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
-                child: SizedBox(
-                  height: 150,
-                  // width: 250,
-                  child: ListViewHorizontal(
-                    subwidth: 2.2,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                  child: SizedBox(
+                    height: 150,
+                    // width: 250,
+                    child: ListViewHorizontal(
+                      subwidth: 2.2,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 270,
-                child: ListViewIcons(),
-              ),
-              SizedBox(
-                height: 270,
-                child: TravelPackage(),
-              )
-            ],
-          ),
+                SizedBox(
+                  height: 270,
+                  child: ListViewIcons(),
+                ),
+                SizedBox(
+                  height: 270,
+                  child: TravelPackage(),
+                )
+              ],
+            ),
+          ]),
         ),
       ),
     );

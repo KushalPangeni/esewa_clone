@@ -28,15 +28,22 @@ class AppBarProfile extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.search),
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                ),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.notifications_outlined),
+                icon: Icon(
+                  Icons.notifications_outlined,
+                  color: Colors.white,
+                ),
               ),
               IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.more_vert),
+                color: Colors.white,
               )
             ],
           ),
